@@ -1,0 +1,10 @@
+<div *ngIf="books$ | async as books">
+  <mat-card *ngFor="let book of books" >
+    <mat-card-title>
+      <a [routerLink]="['/books', book.isbn]">{{book.title}}</a>
+    </mat-card-title>
+    <mat-card-content>
+      {{book.subtitle}}
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,5 @@
+<div class="vertical-navigation">
+  <span *ngFor="let navigation of navigations">
+    <a mat-raised-button [routerLink]="navigation.path" color="secondary">{{navigation.label}}</a>
+  </span>
+</div>
