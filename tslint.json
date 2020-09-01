@@ -19,7 +19,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "book-app",
       "camelCase"
     ],
     "component-selector": [
