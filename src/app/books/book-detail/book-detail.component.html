@@ -1,4 +1,7 @@
 <mat-card *ngIf="book$ | async as book">
-  <mat-card-title>{{book.title}}</mat-card-title>
+  <mat-card-title>
+    {{book.title}}
+    <a [routerLink]="['edit']">Edit</a>
+  </mat-card-title>
   <mat-card-content>{{book.subtitle}}</mat-card-content>
 </mat-card>

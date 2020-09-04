@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="title">Title: </label>
+  <input id="title" type="text" formControlName="title" required/>
+  <span [hidden]="!form.get('title').hasError('required')" style="color: orangered">Can not be empty!</span>
+  <br />
+
+  <label for="abstract">Abstract: </label>
+  <input id="abstract" type="text" formControlName="abstract" required/>
+  <span [hidden]="!form.get('abstract').hasError('required')" style="color: orangered">Can not be empty!</span>
+  <span [hidden]="!form.get('abstract').hasError('minlength')" style="color: orangered">Min length 5!</span>
+  <br />
+
+  <label for="author">Author</label>
+  <input id="author" type="text" formControlName="author" required/>
+  <span [hidden]="!form.get('author').hasError('required')" style="color: orangered">Can not be empty!</span>
+
+  <br />
+  <button type="submit" [disabled]="form.invalid">Save</button>
+</form>

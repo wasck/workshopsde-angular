@@ -24,6 +24,7 @@ export class NavigationComponent implements OnInit {
 
     this.navigations.push(
       {path: '/books', label: 'Books'},
+      {path: '/books/new', label: 'New Book'},
       {path: '/about', label: 'About'},
     );
   }

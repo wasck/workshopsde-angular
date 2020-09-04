@@ -21,4 +21,12 @@ export class BookDataService {
   public getBookByIsbn(isbn: string): Observable<Book> {
     return this.httpClient.get<Book>(this.BOOKMONKEY_API_URL + `/books/${isbn}`);
   }
+
+  public updateBook(book: Book): Observable<Book> {
+    return this.httpClient.put<Book>(this.BOOKMONKEY_API_URL + `/books/${book.isbn}`, book);
+  }
+
+  public addBook(book: Book): Observable<Book> {
+    return this.httpClient.post<Book>(this.BOOKMONKEY_API_URL + '/books', book);
+  }
 }

@@ -4,7 +4,8 @@ import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailComponent} from './book-detail/book-detail.component';
 import {BooksComponent} from './books/books.component';
 import {ConfirmCandeactivateGuard} from '../guards/confirm-candeactivate.guard';
-import {ConfirmCanactivateGuard} from '../guards/confirm-canactivate.guard';
+import {BookEditComponent} from './book-edit/book-edit.component';
+import {BookNewComponent} from './book-new/book-new.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
     component: BooksComponent,
     children: [
       { path: '', component: BookListComponent },
-      { path: ':isbn', component: BookDetailComponent, canActivate: [ConfirmCanactivateGuard], canDeactivate: [ConfirmCandeactivateGuard] }
+      { path: 'new', component: BookNewComponent },
+      { path: ':isbn', component: BookDetailComponent, /*canActivate: [ConfirmCanactivateGuard],*/ canDeactivate: [ConfirmCandeactivateGuard] },
+      { path: ':isbn/edit', component: BookEditComponent }
     ]
   }
 ];
